@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">05_Netflix</string>
+    <string name="Menu_mensagem">Mensagem</string>
+    <string name="Menu_volume">volume</string>
+    <string name="Menu_favorito">favorito</string>
+    <string name="Menu_Episodios">Episodios</string>
+    <string name="Inf_Ep">Temporada e Episódio</string>
+    <string name="Titulo">Séri</string>
+</resources>

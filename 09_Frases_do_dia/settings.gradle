@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='09_Frases_do_dia'

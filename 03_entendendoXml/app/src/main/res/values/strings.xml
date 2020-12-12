@@ -1,0 +1,5 @@
+<!--CENTRALISACAO AS RESOLUCOES DE STRINGS  - SEMPRE CRIANDO UMA RESOLUCAO-->
+<resources>
+    <string name="app_name">03_entendendoXml</string>
+    <string name="botao_adastro">CADASTRAR-SE</string>
+</resources>

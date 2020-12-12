@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Centralisacao de cores-->
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="cor_texto_botao_cad">#FBFBFB</color>
+    <color name="background_botao_cad">#352020</color>
+    <color name="Cor_fund_janela">#71A9BF</color>
+    <color name="cor_texto">#FFEB3B</color>
+    <color name="cor_text_color_primery">#000000</color>
+    <!--Cores que podem ser referenciadas pelos nomes-->
+</resources>

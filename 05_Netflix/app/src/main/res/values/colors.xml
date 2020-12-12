@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Define as cores que outros podem usar-->
+<resources>
+    <color name="colorPrimary">#d61e21</color>
+    <color name="colorPrimaryDark">#780000</color>
+    <color name="colorAccent">#ff4f4f</color>
+    <color name="corFundo">#444345</color>
+    <color name="Cor_fundo_t1">#393939</color>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!--DarkActionBar apagado para sobreescrever-->
+        <!--O parent ja dispoes de cores padrao caso nao seja sobreescrito-->
+        <!-- Customize your theme here. -->
+        <!--CENTRALISAR AS CORES DAS JANELAS-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--Referencia a cor que esta em colors (@color/colorAccent) -->
+        <item name="android:windowBackground">@color/Cor_fund_janela</item>
+        <item name="android:textColor">@color/cor_texto</item>
+        <item name="android:textColorPrimary">@color/cor_text_color_primery</item>
+    </style>
+
+</resources>
