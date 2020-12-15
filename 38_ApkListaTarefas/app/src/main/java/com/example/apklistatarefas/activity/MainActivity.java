@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
      @Override
      protected void onStart() {
           super.onStart();
-          carregarListaTarefas();
+          carregarListaTarefas();//Carrega o arrayList
      }
 
      public void carregarListaTarefas(){
