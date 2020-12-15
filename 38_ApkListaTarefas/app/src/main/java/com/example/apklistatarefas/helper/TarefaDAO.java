@@ -28,7 +28,7 @@ public class TarefaDAO implements ITarefaDAO{
           cv.put("nome", tarefa.getNomeTarefa());//Coluna e nomeTarefa
 
           try {
-               escreve.insert(DBHelper.TABELA_TAREFAS, null, cv);//Salva
+               escreve.insert(DBHelper.TABELA_TAREFAS, null, cv);//Salva no banco
                Log.i("Info","Tarefa salva com sucesso");
           } catch (Exception e){
                Log.i("Info","Erro ao salva tarefa" + e.getMessage());
@@ -45,19 +45,27 @@ public class TarefaDAO implements ITarefaDAO{
 
           try {
                String[] args = {tarefa.getIdTarefa().toString()};//Substituido no lugar das interrogacoes
-               escreve.update(DBHelper.TABELA_TAREFAS, cv, "id = ?", args);
+               escreve.update(DBHelper.TABELA_TAREFAS, cv, "id = ?", args);//Atualiza no banco
                Log.i("Info","Tarefa atualizada com sucesso");
           } catch (Exception e){
                Log.i("Info","Erro ao atualizar tarefa" + e.getMessage());
                return false;
           }
-
           return true;
      }
 
      @Override
      public boolean deletar(Tarefa tarefa) {
-          return false;
+
+          try {
+               String[] args = {tarefa.getIdTarefa().toString()};
+               escreve.delete(DBHelper.TABELA_TAREFAS, "id = ?", args);//Deletando do banco
+               Log.i("Info","Tarefa deletar com sucesso");
+          } catch (Exception e){
+               Log.i("Info","Erro ao deletar tarefa" + e.getMessage());
+               return false;
+          }
+          return true;
      }
 
      @Override
@@ -68,7 +76,7 @@ public class TarefaDAO implements ITarefaDAO{
           String sql = "SELECT * FROM " + DBHelper.TABELA_TAREFAS + " ;";
 
           //Cursor indexando as colunas
-          Cursor cursor = le.rawQuery(sql, null);//Pega todas as colunas
+          Cursor cursor = le.rawQuery(sql, null);//Seleciona colunas
 
           while (cursor.moveToNext()){
                Tarefa tarefa = new Tarefa();

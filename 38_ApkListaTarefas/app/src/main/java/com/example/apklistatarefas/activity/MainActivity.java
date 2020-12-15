@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
                                     //Enviar tarefa para AdcionarTarefaActivity
                                     Intent intent = new Intent(MainActivity.this, AdcionarTarefaActivity.class);
-                                    startActivity(intent);
                                     intent.putExtra("tarefaSelecionada",tarefaSelecionada);//Passa a tarefa para AdcionarTarefaActivity
                                     startActivity(intent);
+
                                }
 
                                @Override
@@ -91,7 +91,19 @@ public class MainActivity extends AppCompatActivity {
                                          @Override
                                          public void onClick(DialogInterface dialogInterface, int i) {
 
+                                              //Recarregando lista - Nao mostrar tarefas apagadas
 
+                                             TarefaDAO tarefaDAO = new TarefaDAO(getApplicationContext());
+                                             if (tarefaDAO.deletar(tarefaSelecionada)){
+                                                  carregarListaTarefas();
+                                                  Toast.makeText(getApplicationContext(),
+                                                          "Sucesso ao excluir tarefa.  ",
+                                                          Toast.LENGTH_SHORT).show();
+                                             } else {
+                                                  Toast.makeText(getApplicationContext(),
+                                                          "Erro ao excluir tarefa.  ",
+                                                          Toast.LENGTH_SHORT).show();
+                                             }
 
                                          }
                                     });
@@ -103,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                                          }
                                     });
 
+                                    //Exibe dialog
                                     dialog.create();
                                     dialog.show();
                                }

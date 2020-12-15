@@ -2,6 +2,7 @@ package com.example.apklistatarefas.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -54,14 +55,13 @@ public class AdcionarTarefaActivity extends AppCompatActivity {
                          if (!nomeTarefa.isEmpty()){
                              Tarefa tarefa = new Tarefa();
 
+                             //Colocando dados em um obj tarefa
                              tarefa.setNomeTarefa(nomeTarefa);
                              tarefa.setIdTarefa(tarefaAtual.getIdTarefa());
 
                              //Atualisando no banco de dados
                               if (tarefaDAO.atualizar(tarefa)){
-
-                                   finish();//Fecha a activity
-                                   Toast.makeText(getApplicationContext(),
+                                   Toast.makeText(getApplicationContext(),//O context cha a activity novamente
                                            "Tarefa atualizada com sucesso. ",
                                            Toast.LENGTH_SHORT).show();
                               } else {
@@ -70,7 +70,6 @@ public class AdcionarTarefaActivity extends AppCompatActivity {
                                            "Erro ao atualizar tarefa.  ",
                                            Toast.LENGTH_SHORT).show();
                               }
-
                          }
                     } else {//Salvando
 
@@ -81,7 +80,6 @@ public class AdcionarTarefaActivity extends AppCompatActivity {
                               tarefa.setNomeTarefa(nomeTarefa);
                               if (tarefaDAO.salvar(tarefa)){
 
-                                   finish();//Fecha a activity
                                    Toast.makeText(getApplicationContext(),
                                              "Salvo com sucesso. ",
                                              Toast.LENGTH_SHORT).show();
@@ -92,12 +90,13 @@ public class AdcionarTarefaActivity extends AppCompatActivity {
                                            Toast.LENGTH_SHORT).show();
                               }
                          }else {
-                              finish();
                               Log.i("Info", "Tarefa não informada");
                          }
                     }
                     break;
+
           }
-           return super.onOptionsItemSelected(item);
+          finish();
+          return super.onOptionsItemSelected(item);
      }
 }
