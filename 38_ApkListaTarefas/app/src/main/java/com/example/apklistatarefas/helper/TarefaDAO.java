@@ -17,13 +17,15 @@ public class TarefaDAO implements ITarefaDAO{
      private  SQLiteDatabase le;//getReadableDatabase()
 
      public TarefaDAO(Context context) {
-          DBHelper dbHelper = new DBHelper(context);//So existe no construtor
+
+          DBHelper dbHelper = new DBHelper(context);//So existe no construtor - passa o context para o banco
           escreve = dbHelper.getWritableDatabase();//Salva no banco.
           le = dbHelper.getReadableDatabase();//Le do banco.
      }
 
      @Override
      public boolean salvar(Tarefa tarefa) {//Recebe e salva tarefa
+
           ContentValues cv = new ContentValues();
           cv.put("nome", tarefa.getNomeTarefa());//Coluna e nomeTarefa
 
@@ -70,6 +72,7 @@ public class TarefaDAO implements ITarefaDAO{
 
      @Override
      public List<Tarefa> listar() {
+
           List<Tarefa> listaTarefas = new ArrayList<>();
 
           //Comando SQL

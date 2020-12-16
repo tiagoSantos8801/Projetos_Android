@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
                                @Override
                                public void onLongItemClick(View view, int position) {
-                                   //Recuperar tarefa que se deseja deletar
+
+                                    //Recuperar tarefa que se deseja deletar
                                    tarefaSelecionada = listaTrefas.get(position);
 
                                     AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);

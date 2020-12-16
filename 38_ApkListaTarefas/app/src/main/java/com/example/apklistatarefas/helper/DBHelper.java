@@ -21,6 +21,7 @@ public class DBHelper  extends SQLiteOpenHelper {
      //Quando se cria pela primera vez (instalacao)
      @Override
      public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
           String sql = "CREATE TABLE IF NOT EXISTS " + TABELA_TAREFAS +
                        " (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL); ";
 
@@ -35,6 +36,7 @@ public class DBHelper  extends SQLiteOpenHelper {
      //Quando se atualiza o app
      @Override
      public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
           String sql = "DROP TABLE IF EXISTS " + TABELA_TAREFAS + " ; ";
 //        String sql = "ALTER TABLE " + TABELA_TAREFAS + " ADD COLUMN status VARCHAR(2);";
 

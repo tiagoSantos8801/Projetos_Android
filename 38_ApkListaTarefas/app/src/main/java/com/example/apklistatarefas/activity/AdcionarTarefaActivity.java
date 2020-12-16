@@ -38,12 +38,14 @@ public class AdcionarTarefaActivity extends AppCompatActivity {
 
      @Override
      public boolean onCreateOptionsMenu(Menu menu) {
+
           getMenuInflater().inflate(R.menu.menu_main2, menu);
           return true;
      }
 
      @Override
      public boolean onOptionsItemSelected(MenuItem item) {
+
           int id = item.getItemId();
           switch (id){
                case R.id.action_settings://Salvando tarefa informada
