@@ -5,7 +5,7 @@ public class Usuario {
      String nome, cpf;
      int idade;
 
-     public Usuario() {//O FireBase origa ter um constructor,Default
+     public Usuario() {//O FireBase obriga ter um constructor,Default
      }
 
      public String getNome() {

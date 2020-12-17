@@ -1,9 +1,5 @@
 package com.example.jamiltondamasceno.firebaseapp;
 
-/**
- * Created by jamiltondamasceno
- */
-
 public class Usuario {
 
     private String nome;
