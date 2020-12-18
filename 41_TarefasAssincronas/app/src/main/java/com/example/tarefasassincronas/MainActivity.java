@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
      }
 
+     //Ao clicar no botao iniciar
      public void iniciarAsynkTask(View view){
           MyAsyncTask myAsyncTask = new MyAsyncTask();
           myAsyncTask.execute(10);//Esse metodo executa a classe da forma correta.
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
      * 3 -> Retorno apos tarefa finalisada
      * */                       //doInBackground(),onProgressUpdate(),onPostExecute()
      public class MyAsyncTask extends AsyncTask<Integer, Integer, String>{//AsyncTask - para facilitar a comunicacao entre as Threads
-
 
           @Override//Fazer preparacoes
           protected void onPreExecute() {
