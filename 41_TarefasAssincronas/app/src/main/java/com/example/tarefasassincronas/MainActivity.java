@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                int numero = integers[0];
                for (int i = 0; i <= numero; i++){
                     //progressBar.setVisibility(View.VISIBLE);//View nao execulta em contexto de Thread que nao seja UI
-
                     publishProgress(i);//Envia para onProgressUpdate()
+
                     try {
                          Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                progressBar.setProgress(0);//Retorna para o progresso zero
                progressBar.setVisibility(View.INVISIBLE);
+
                Toast.makeText(MainActivity.this,
                        s, Toast.LENGTH_SHORT).show();
           }
