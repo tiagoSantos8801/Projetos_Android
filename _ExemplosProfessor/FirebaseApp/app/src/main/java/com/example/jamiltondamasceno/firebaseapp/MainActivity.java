@@ -1,4 +1,4 @@
-    package com.example.jamiltondamasceno.firebaseapp;
+package com.example.jamiltondamasceno.firebaseapp;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
