@@ -34,9 +34,9 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*//Recupera o obj que insere informacoes no banco
-    private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-    private FirebaseAuth usuario = FirebaseAuth.getInstance();*/
+    /**Recupera o obj que insere informacoes no banco*/
+//    private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+//    private FirebaseAuth usuario = FirebaseAuth.getInstance();
 
     private ImageView imageFoto;
     private Button buttonUpload;
@@ -75,13 +75,14 @@ public class MainActivity extends AppCompatActivity {
                 final StorageReference imagemRef = imagens.child("celular.jpeg");//Arquivo dentro da pasta imagens criada
                 //final StorageReference imagemRef = imagens.child(nomeArqRandomico + ".jpeg");//Arquivo dentro da pasta imagens criada
 
-                //Fazendo Dowload - por meio de uma bibloteca do FireBase-Storage
+                /**Fazendo Dowload - por meio de uma bibloteca do FireBase-Storage*/
+                /*
                 Glide.with(MainActivity.this)
                         .using(new FirebaseImageLoader())
                         .load( imagemRef )
-                        .into( imageFoto );//Joga a imagem do banco nessa imageView
+                        .into( imageFoto );//Joga a imagem do banco nessa imageView*/
 
-                //Deletando image do Storage
+                /**Deletando image do Storage*/
                 /*  imagemRef.delete().addOnFailureListener(MainActivity.this, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
@@ -98,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });*/
 
-                //NOme da imagem
+                /**NOme da imagem*/
                 //String nomeArquivo = UUID.randomUUID().toString();//Nome da imagem randomico
                 //StorageReference imagemRef = imagens.child("celular.jpeg");//OU
                 //StorageReference imagemRef = imagens.child( nomeArquivo + ".jpeg");//nome ramdomico
 
-                //Fazendo Upload de imagem - SE O USUARIO ESTIVER LOGADO OU MUDAR AS REGRAS
+                /**Fazendo Upload de imagem - SE O USUARIO ESTIVER LOGADO OU MUDAR AS REGRAS*/
                 //Retorna objeto que irá controlar o upload
                 //UploadTask uploadTask = imagemRef.putBytes( dadosImagem );//putBytes()-recebe o array de bytes - baos.toByteArray()
 
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                                         .startAt(18)
                                         .endAt(22);*/
 
-        /* Filtrar palavras */
+        /** Filtrar palavras */
         /*Query usuarioPesquisa = usuarios.orderByChild("nome")
                                         .startAt("Ja")
                                         .endAt("Jo" + "\uf8ff" );
@@ -182,17 +183,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        /*Usuario usuario = new Usuario();
+        //Passando valores para o obj
+        /*
+        Usuario usuario = new Usuario();
         usuario.setNome("Rodrigo");
         usuario.setSobrenome("Matos");
         usuario.setIdade(35);
 
-        usuarios.push().setValue( usuario );*/
+        usuarios.push().setValue( usuario );
+         */
 
-        /*Deslogar usuario*/
+        /**Deslogar usuario*/
         //usuario.signOut();
 
-        /*Logar usuario
+        /**Logar usuario*/
+        /*
         usuario.signInWithEmailAndPassword(
                 "jamilton2@gmail.com", "ja12345")
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -206,14 +211,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });*/
 
-        /*Verifica usuario logado
-        if( usuario.getCurrentUser() != null ){
+        /**Verifica usuario logado*/
+/*        if( usuario.getCurrentUser() != null ){
             Log.i("CurrentUser", "Usuario logado!" );
         }else {
             Log.i("CurrentUser", "Usuario nao logado!" );
         }*/
 
-        /*Cadastro de usuario
+        /**Cadastro de usuario*/
+        /*
         usuario.createUserWithEmailAndPassword(
                 "jamilton2@gmail.com", "ja12345")
                 .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
@@ -242,22 +248,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+*/
 
-
-         Salvar dados no Firebase
-        Usuario usuario = new Usuario();
-        usuario.setNome("Maria");
-        usuario.setSobrenome("Silva");
-        usuario.setIdade(45);
-
-        Produto produto = new Produto();
-        produto.setDescricao("Acer Aspire");
-        produto.setMarca("Acer");
-        produto.setPreco(999.99);
-
-        produtos.child("002").setValue( produto );*/
-
-        //usuarios.child("002").setValue(  );
+        /** Salvar dados no Firebase*/
+//        Usuario usuario = new Usuario();
+//        usuario.setNome("Maria");
+//        usuario.setSobrenome("Silva");
+//        usuario.setIdade(45);
+//
+//        Produto produto = new Produto();
+//        produto.setDescricao("Acer Aspire");
+//        produto.setMarca("Acer");
+//        produto.setPreco(999.99);
+//
+//        produtos.child("002").setValue( produto );
+//
+//        //usuarios.child("002").setValue(  );
 
     }
 
