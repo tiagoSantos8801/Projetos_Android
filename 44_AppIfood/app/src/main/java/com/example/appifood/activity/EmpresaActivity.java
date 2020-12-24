@@ -13,24 +13,19 @@ import android.view.MenuItem;
 import com.example.appifood.R;
 import com.example.appifood.helper.ConfiguracaoFireBase;
 import com.google.firebase.auth.FirebaseAuth;
-import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
-public class HomeActivity extends AppCompatActivity {
+public class EmpresaActivity extends AppCompatActivity {
 
-     private FirebaseAuth auth;//Para acessar
-     private MaterialSearchView searchView;
+     private FirebaseAuth auth;
 
      @Override
      protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
-          setContentView(R.layout.activity_home);
-
-          //Inicializar componentes
-          inicializarComponentes();
+          setContentView(R.layout.activity_empresa);
 
           //Configuracoes Toolbar
           Toolbar toolbar = findViewById(R.id.toolbar);
-          toolbar.setTitle("Ifood");
+          toolbar.setTitle("Ifood - Empresa");
           setSupportActionBar(toolbar);//Toolbar como o suporte para essa activity
 
           auth = ConfiguracaoFireBase.getFirebaseAutentificacao();//Pegando acesso ao usuario
@@ -41,11 +36,7 @@ public class HomeActivity extends AppCompatActivity {
      public boolean onCreateOptionsMenu(Menu menu) {
 
           MenuInflater inflater = getMenuInflater();
-          inflater.inflate(R.menu.menu_usuario, menu);
-
-          //Configurando botao de pesquisa
-          MenuItem menuItem = menu.findItem(R.id.menuPesquisa);//Pega o id do item de menu
-          searchView.setMenuItem(menuItem);//Item do menu que sera a searchView
+          inflater.inflate(R.menu.menu_empresa, menu);
 
           return super.onCreateOptionsMenu(menu);
      }
@@ -60,25 +51,29 @@ public class HomeActivity extends AppCompatActivity {
                case R.id.menuConfiguracoes:
                     abrirConfiguracoes();
                     break;
+               case R.id.menuNovoProduto:
+                    abrirNovoProduto();
+                    break;
           }
+
           return super.onOptionsItemSelected(item);
      }
 
+     private void abrirNovoProduto() {
+          startActivity(new Intent(EmpresaActivity.this, NovoProdutoEmpresaActivity.class));
+     }
+
      private void abrirConfiguracoes() {
-          startActivity(new Intent(HomeActivity.this, ConfiguracoesUsuarioActivity.class));
+          startActivity(new Intent(EmpresaActivity.this, ConfiguracoesEmpresaActivity.class));
      }
 
      private void deslogarUsuario() {
           try {//Tratando possivel erro ao deslogar usuario
                auth.signOut();
-               startActivity(new Intent(HomeActivity.this, AutenticationActivity.class));
+               startActivity(new Intent(EmpresaActivity.this, AutenticationActivity.class));
                finish();
           } catch (Exception e){
                e.printStackTrace();
           }
-     }
-
-     private void inicializarComponentes(){
-          searchView = findViewById(R.id.materialSearchView);
      }
 }
