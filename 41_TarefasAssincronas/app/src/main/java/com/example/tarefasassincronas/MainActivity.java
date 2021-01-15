@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
           }
 
           @Override//Execucoes pesadas
-          protected String doInBackground(Integer... integers) {
+          protected String doInBackground(Integer... integers) {//Integer... integers - VarArgs, tipo um array
 
                int numero = integers[0];
                for (int i = 0; i <= numero; i++){
@@ -56,12 +56,11 @@ public class MainActivity extends AppCompatActivity {
                     } catch (InterruptedException e) {
                          e.printStackTrace();
                     }
-
                }
                return "Finalisado. ";
           }
 
-          @Override//Progresso do doInBackground()
+          @Override//Progresso do doInBackground() - uma barra de progress
           protected void onProgressUpdate(Integer... values) {
                super.onProgressUpdate(values);
                progressBar.setProgress(values[0]);
